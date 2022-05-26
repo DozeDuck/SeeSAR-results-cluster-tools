@@ -18,7 +18,6 @@ try:
    opts, args = getopt.getopt(args,"h:p:l:o:d:",["help",
                                                    "input_pdb=",
                                                    "input_lig=",
-                                                   "number_per_sublibrary=",
                                                    "output_name=",
                                                    "distance_box="])
 except getopt.GetoptError:
