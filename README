@@ -1,0 +1,2 @@
+grid_for_protein.py -p <inputprotein> -l <inputligands> -o <output_name> -d <distance_between_box_protein>
+
