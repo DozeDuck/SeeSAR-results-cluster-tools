@@ -7,7 +7,6 @@ Created on Thu May 19 22:50:02 2022
 """
 import getopt
 import sys
-import math
 # import string
 # import numpy
 
@@ -186,11 +185,11 @@ with open(out_put_name,"w") as dummy:
     for i in range(num_mol):
         if(i == which_compound[b]):
         # print(count,count+int(atom_amount[i]))
-            print("%4s%7d%5s%4s%2s%4d%12.3f%8.3f%8.3f%6.2f%6.3f%6.3f" % ("ATOM", i+1, "C", "C", "A", i+1, sum(x_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(y_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(z_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]),1.00,math.log((low_affinity_amount[b]+high_affinity_amount[b])/2,10),math.log((low_affinity_amount[b]+high_affinity_amount[b])/2,10)), file = dummy)
+            print("%4s%7d%5s%4s%2s%4d%12.3f%8.3f%8.3f%6.2f%20.3f" % ("ATOM", i+1, "C", "C", "A", i+1, sum(x_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(y_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(z_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]),1.00,(low_affinity_amount[b]+high_affinity_amount[b])/2), file = dummy)
             b += 1
             print("TER", file = dummy)
         else:
-            print("%4s%7d%5s%4s%2s%4d%12.3f%8.3f%8.3f%6.2f%6.3f%6.3f" % ("ATOM", i+1, "C", "C", "A", i+1, sum(x_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(y_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(z_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]),1.00,math.log(100000000000000,10),math.log(100000000000000,10)), file = dummy)
+            print("%4s%7d%5s%4s%2s%4d%12.3f%8.3f%8.3f%6.2f%20.3f" % ("ATOM", i+1, "C", "C", "A", i+1, sum(x_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(y_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]), sum(z_peratom[count:count+int(atom_amount[i])])/int(atom_amount[i]),1.00,100000000000000), file = dummy)
             print("TER", file = dummy)
         count += int(atom_amount[i])
 
